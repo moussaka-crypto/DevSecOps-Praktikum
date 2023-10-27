@@ -1,2 +1,3 @@
 # DevSecOps-Praktikum
-Tadim Team 22
+## Tadjiev & Dimov Team 22
+### https://tadim-team22.devsecops.fh-aachen.de
