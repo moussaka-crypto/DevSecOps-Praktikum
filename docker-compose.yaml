@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+  threatdragon:
+    image: owasp/threat-dragon:v2.0.7
+    container_name: threatdragon
+    depends_on:
+      - reverseproxy
+    volumes:
+      - ./config.env:/app/.env
+    expose:
+      - "8080"
+
+
+  reverseproxy:
+    image: nginx:latest
+    container_name: reverseproxy
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/SSL/tadim-team22.devsecops.fh-aachen.de.key:/etc/nginx/SSL/tadim-team22.devsecops.fh-aachen.de.key
+      - ./nginx/SSL/tadim-team22.devsecops.fh-aachen.de.cer:/etc/nginx/SSL/tadim-team22.devsecops.fh-aachen.de.cer
+    ports:
+      - "80:80"
+      - "443:443"
