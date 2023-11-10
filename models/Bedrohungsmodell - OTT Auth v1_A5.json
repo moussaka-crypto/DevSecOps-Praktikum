@@ -1,0 +1,1831 @@
+{
+  "summary": {
+    "title": "Bedrohungsmodell - OTT Auth",
+    "owner": "Team 22",
+    "description": "Die Firma Allsecure betreibt unterschiedliche Anwendungen mit Hilfe einer 2-Faktorauthentifizierung via One-time token, der an das entsprechende Smartphone des Nutzers geschickt wird."
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "Georg Neugebauer"
+      },
+      {
+        "name": "DevSecOps Kursteilnehmer"
+      },
+      {
+        "name": "Hristomir Dimov"
+      },
+      {
+        "name": "Nodirjon Tadjiev"
+      }
+    ],
+    "diagrams": [
+      {
+        "cells": [
+          {
+            "position": {
+              "x": 10,
+              "y": -10
+            },
+            "size": {
+              "width": 160,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "User"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "id": "dec51efb-bf55-4b9c-a294-0e45f4e823f6",
+            "data": {
+              "name": "User",
+              "description": "",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            }
+          },
+          {
+            "position": {
+              "x": 270,
+              "y": -70
+            },
+            "size": {
+              "width": 110,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Login System -\nWebapp +\nMobile App"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "id": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa",
+            "data": {
+              "name": "Login System -\nWebapp +\nMobile App",
+              "description": "Vergleicht eingegebenen OTT-Wert auf Telefon mit erwartetem OTT seitens 2-Faktor-Dienst. ",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "id": "799e2723-6d30-4571-b2df-bdc391bd2176",
+                  "title": "Zero-Day Schwachstelle der Standard-SW für Kryptographie",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "Leak von Kundendaten ist möglich anhand einer Schwachstelle in der Krypto-Software\n\n117\nTA0100\n\n8.3.7\nMASVS-CODE-4",
+                  "mitigation": "* FH Style verschlüsseln: VPN mit anderem Verschlüsselungssoftware\n* Regelmäßige Sicherheitsprüfungen und Aktualisierung der Krypto-Software\n Um das Risiko eines Kundendatenlecks aufgrund von Schwachstellen in der Krypto-Software zu minimieren, ist es entscheidend, regelmäßige Sicherheitsprüfungen durchzuführen und sicherzustellen, dass die verwendete Krypto-Software auf dem neuesten Stand ist.\nDurch regelmäßige Sicherheitsprüfungen können Schwachstellen in der Krypto-Software identifiziert und behoben werden, bevor sie von Angreifern ausgenutzt werden können.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Implementierung von automatisierten und manuellen Sicherheitsprüfungen, um Schwachstellen in der Krypto-Software zu identifizieren.\nEinführung eines effektiven Patch-Management-Systems, um sicherzustellen, dass die Krypto-Software stets auf dem neuesten Stand ist.\n\n* Durch regelmäßige Sicherheitsprüfungen und die Aktualisierung der Krypto-Software wird das Risiko von Schwachstellen und einem daraus resultierenden Datenleck erheblich reduziert.\nWiederbewertung des Risikos: Nach Implementierung der Maßnahmen sollte eine regelmäßige Überprüfung erfolgen, um sicherzustellen, dass die Sicherheitsvorkehrungen wirksam sind und den aktuellen Bedrohungen standhalten können.\n\nD3-DLIC",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 103,
+                  "score": ""
+                }
+              ],
+              "hasOpenThreats": true
+            }
+          },
+          {
+            "position": {
+              "x": 520,
+              "y": 50
+            },
+            "size": {
+              "width": 110,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "2-Faktor-Authe\nntifizierungsdi\nenst"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 3,
+            "id": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c",
+            "data": {
+              "name": "2-Faktor-Authe\nntifizierungsdi\nenst",
+              "description": "",
+              "type": "tm.Flow",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "id": "8958670f-077f-4369-9eec-b2208356e1b9",
+                  "title": "Zero-Day Schwachstelle der Standard-SW für Kryptographie",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "Leak von Kundendaten ist möglich anhand einer Schwachstelle in der Krypto-Software\n\n117\nTA0100\n\nD 2\nR 0\nE 6\nA 10\nD 1\n\nRelativ unwahrscheinlich\nKann aber alle Benutzer betreffen\n\n6.2.4\nMASVS-CODE-4",
+                  "mitigation": "* Krypto-Software-Sicherheitsbewertung und Aktualisierung: Um das Risiko eines Kundendatenlecks aufgrund von Schwachstellen in der Krypto-Software zu minimieren, ist es wichtig, die Sicherheit der verwendeten Krypto-Software zu bewerten und regelmäßige Aktualisierungen sicherzustellen.\nDurchführen einer umfassenden Sicherheitsbewertung der Krypto-Software, um potenzielle Schwachstellen zu identifizieren.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Beauftragen von Sicherheitsfachleuten oder Sicherheitsunternehmen, um eine umfassende Sicherheitsbewertung der Krypto-Software durchzuführen.\nPatch-Management: Einrichten eines effektiven Patch-Management-Systems, um sicherzustellen, dass die Krypto-Software stets auf dem neuesten Stand ist.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Die Sicherheitsbewertung und regelmäßige Aktualisierung der Krypto-Software tragen dazu bei, bekannte Schwachstellen zu beheben und das Risiko eines Kundendatenlecks zu minimieren.\n\nD3-DLIC",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 119,
+                  "score": ""
+                },
+                {
+                  "id": "60f66167-77ac-4e4f-a352-69b4d867c8ba",
+                  "title": "API Gateway Schlüssel werden ausgelesen",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Mit dem Schlüssel kann man Benutzerdaten auslesen, obwohl robuster Verschlüsselungsalgorithmus angewendet wird.\n\n94\nTA0100\n\nD 7\nR 2\nE 8\nA 2\nD 7\n\nNur Telefonnummern werden damit ausgelesen\nMittlere Wahrscheinlichkeit, da man schon Zugriff auf den Service gehabt haben muss...\n\n4.2.2\nMASVS-NETWORK-2",
+                  "mitigation": "*  Verbessertes Schlüsselmanagement und Datenzugriffskontrolle: Um sicherzustellen, dass selbst bei einem robusten Verschlüsselungsalgorithmus der Zugriff auf Benutzerdaten nur autorisierten Personen möglich ist, sind verbessertes Schlüsselmanagement und eine effektive Datenzugriffskontrolle erforderlich.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Hardware-Sicherheitsmodule (HSM): Integration von HSMs zur sicheren Verwahrung von Verschlüsselungsschlüsseln, um den physischen Schutz der Schlüssel zu gewährleisten.\nSchlüsselrotation: Implementierung von regelmäßiger Schlüsselrotation, um im Falle eines Kompromisses den Schaden zu begrenzen.\nAudit-Logging: Einführung von Audit-Logging-Mechanismen, um alle Zugriffe auf verschlüsselte Daten zu protokollieren und eine lückenlose Aufzeichnung von Aktivitäten zu gewährleisten.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Durch verbessertes Schlüsselmanagement und präzise Datenzugriffskontrollen wird das Risiko eines unautorisierten Zugriffs auf Benutzerdaten trotz robuster Verschlüsselung minimiert.\n\nD3-FE",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 120,
+                  "score": ""
+                }
+              ],
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false
+            }
+          },
+          {
+            "position": {
+              "x": 805,
+              "y": -37
+            },
+            "size": {
+              "width": 120,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Telefonnummer-\nAPI-Gateway"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 4,
+            "id": "ebc88767-2bed-409f-b854-efadec206ba8",
+            "data": {
+              "name": "Telefonnummer-\nAPI-Gateway",
+              "description": "",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 515,
+              "y": 380
+            },
+            "size": {
+              "width": 120,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Kundentelefon-\nanbieter"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 5,
+            "id": "fd7303e8-29d2-4d76-bf7d-87eb619ede69",
+            "data": {
+              "name": "Kundentelefon-\nanbieter",
+              "description": "",
+              "type": "tm.Flow",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false
+            }
+          },
+          {
+            "position": {
+              "x": 1020,
+              "y": -70
+            },
+            "size": {
+              "width": 130,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Telefon-Routing-\nInterface"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 7,
+            "id": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f",
+            "data": {
+              "name": "Telefon-Routing-\nInterface",
+              "description": "",
+              "type": "tm.Flow",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Erwarteter OTT",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "2503a360-01b6-4464-b35f-42c6fb583348",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "1. Auth Challenge"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa"
+            },
+            "target": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "vertices": [
+              {
+                "x": 450,
+                "y": -18.5
+              },
+              {
+                "x": 510,
+                "y": 10
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2. Weiterleitung\nTelefonnummer",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "63356151-e316-4a82-8224-9a7c729cfbee",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Erwarteter OTT"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "target": {
+              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2b. Telefonanbieter",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "89064b41-4f11-4231-8847-44a17455cf23",
+            "labels": [
+              {
+                "position": {
+                  "distance": 0.42493433434678074,
+                  "offset": -25.259919757923186
+                },
+                "attrs": {
+                  "label": {
+                    "text": "2a. Telefonnummer"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "ebc88767-2bed-409f-b854-efadec206ba8"
+            },
+            "target": {
+              "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
+            },
+            "vertices": [
+              {
+                "x": 970,
+                "y": -30
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Alternative A",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "c8a2c6cd-9c14-4d3d-a923-780ddf4f619e",
+            "labels": [
+              {
+                "position": {
+                  "distance": 0.445568595048388,
+                  "offset": -24.574955131994685
+                },
+                "attrs": {
+                  "label": {
+                    "text": "2b. Telefonanbieter"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
+            },
+            "target": {
+              "cell": "ebc88767-2bed-409f-b854-efadec206ba8"
+            },
+            "vertices": [
+              {
+                "x": 980,
+                "y": 70
+              }
+            ]
+          },
+          {
+            "shape": "trust-broundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Externer Service für \nTelefonnummernauflösung (Telco)",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "e9f48ab7-0723-42ca-a3e4-2be07bb92559",
+            "labels": [
+              "Externer Service für \nTelefonnummernauflösung (Telco)"
+            ],
+            "source": {
+              "x": 761,
+              "y": 64
+            },
+            "target": {
+              "x": 761,
+              "y": 63
+            },
+            "vertices": [
+              {
+                "x": 737,
+                "y": -81
+              },
+              {
+                "x": 737,
+                "y": -120
+              },
+              {
+                "x": 814,
+                "y": -281
+              },
+              {
+                "x": 1077,
+                "y": -281
+              },
+              {
+                "x": 1190,
+                "y": -71
+              },
+              {
+                "x": 1109,
+                "y": 149
+              },
+              {
+                "x": 860,
+                "y": 179
+              }
+            ]
+          },
+          {
+            "shape": "trust-broundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Externer Service für\nden Versand des OTT",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "5d5f2170-50ee-404a-99f3-b55e2f657730",
+            "labels": [
+              {
+                "position": {
+                  "distance": 0.1607609674711048,
+                  "offset": 15.4290577443574
+                },
+                "attrs": {
+                  "label": {
+                    "text": "Telefonanbieter"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "x": 487,
+              "y": 373
+            },
+            "target": {
+              "x": 486,
+              "y": 373
+            },
+            "vertices": [
+              {
+                "x": 407,
+                "y": 373
+              },
+              {
+                "x": 337,
+                "y": 419
+              },
+              {
+                "x": 367,
+                "y": 508
+              },
+              {
+                "x": 632,
+                "y": 508
+              },
+              {
+                "x": 657,
+                "y": 380
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Log(Login, OTT, Phone Number)",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "81c8482c-19ed-41ab-bae2-a5561223b4b5",
+            "labels": [
+              "Log(Login, OTT, Phone Number)"
+            ],
+            "source": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "target": {
+              "cell": "c2716661-ef88-48a8-8d0f-724e1923d562"
+            },
+            "vertices": [
+              {
+                "x": 559.5,
+                "y": -60
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Nummer auslesen",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "173e6c33-8e25-4c5e-bc33-9c78bbdeaaad",
+            "labels": [
+              "Nummer auslesen"
+            ],
+            "source": {
+              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69"
+            },
+            "target": {
+              "cell": "2e16a416-e822-44a0-8501-2d54aa8add4f"
+            },
+            "vertices": [
+              {
+                "x": 492,
+                "y": 510
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Auslesen von Informationen",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "d7581b2c-a214-4fa4-b2d3-b5ec3a1bef88",
+            "labels": [
+              "Auslesen von Informationen"
+            ],
+            "source": {
+              "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
+            },
+            "target": {
+              "cell": "b1ef5a1b-e975-4fd3-8ba0-079c4b33533f"
+            },
+            "vertices": [
+              {
+                "x": 1015,
+                "y": -81
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Antwort",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "8ecaba74-0e1f-4520-834c-ddec29220d7e",
+            "labels": [
+              {
+                "position": {
+                  "distance": 0.6100815863762545,
+                  "offset": -21.27058463543483
+                },
+                "attrs": {
+                  "label": {
+                    "text": "2. Weiterleitung\nTelefonnummer"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "target": {
+              "cell": "ebc88767-2bed-409f-b854-efadec206ba8"
+            },
+            "vertices": [
+              {
+                "x": 675,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Telefonnummer, OTT",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "10939d18-1017-4b86-841d-9f5394f83f90",
+            "labels": [
+              {
+                "position": {
+                  "distance": 0.4667551402818713,
+                  "offset": -12.917577739081434
+                },
+                "attrs": {
+                  "label": {
+                    "text": "Antwort"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "ebc88767-2bed-409f-b854-efadec206ba8"
+            },
+            "target": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "vertices": [
+              {
+                "x": 685,
+                "y": 75
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "1. Auth Challenge",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "35f9f840-c060-4c31-bf9a-0e17a95ddf66",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Login"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "dec51efb-bf55-4b9c-a294-0e45f4e823f6"
+            },
+            "target": {
+              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa"
+            },
+            "vertices": [
+              {
+                "x": 170,
+                "y": 39
+              },
+              {
+                "x": 237,
+                "y": 39
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "8939d6de-dc8b-4f8c-8817-b8cada619954",
+            "source": {
+              "cell": "c2716661-ef88-48a8-8d0f-724e1923d562"
+            },
+            "target": {
+              "cell": "6d51507e-6c8c-4438-b29b-81a9654a3861"
+            },
+            "vertices": [
+              {
+                "x": 450,
+                "y": -164
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Text",
+              "name": "OTT",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "3f9c3edd-4fe5-4fc4-9239-2ca13291fc25",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Telefonnummer, OTT"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "target": {
+              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69"
+            },
+            "vertices": [
+              {
+                "x": 640,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "4dd8db73-3eee-4675-bf20-b541700b185a",
+            "source": {
+              "cell": "534435ba-3519-4371-ae95-192fff24e0eb"
+            },
+            "target": {
+              "cell": "3f628a4e-a617-4e98-997c-07ab6a4df77f"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "182a5b36-f33b-4c58-84ee-4e925505ddf5",
+            "source": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "target": {
+              "cell": "3f628a4e-a617-4e98-997c-07ab6a4df77f"
+            }
+          },
+          {
+            "shape": "trust-broundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Externer Service für T\nelefonnummernauflö\nsung",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "8c690a8a-f100-4c4d-bd88-095a530ac220",
+            "labels": [
+              {
+                "position": {
+                  "distance": 0,
+                  "offset": 25.336937022630487
+                },
+                "attrs": {
+                  "label": {
+                    "text": "Firma Allsecure"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "x": 240,
+              "y": 130
+            },
+            "target": {
+              "x": 246,
+              "y": 138
+            },
+            "vertices": [
+              {
+                "x": 241,
+                "y": 180
+              },
+              {
+                "x": 330,
+                "y": 230
+              },
+              {
+                "x": 638,
+                "y": 230
+              },
+              {
+                "x": 638,
+                "y": -46
+              },
+              {
+                "x": 580,
+                "y": -230
+              },
+              {
+                "x": 290,
+                "y": -230
+              },
+              {
+                "x": 243,
+                "y": -8
+              },
+              {
+                "x": 243,
+                "y": 90
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "SIEM-Bericht",
+              "description": "wochentlich",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "TLS 1.3",
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "25847652-510e-4b24-993c-adfc0a3d23fb",
+            "labels": [
+              "SIEM-Bericht"
+            ],
+            "source": {
+              "cell": "3f628a4e-a617-4e98-997c-07ab6a4df77f"
+            },
+            "target": {
+              "x": 0,
+              "y": -120
+            },
+            "vertices": [
+              {
+                "x": 360,
+                "y": 290
+              },
+              {
+                "x": 230,
+                "y": 320
+              },
+              {
+                "x": 42,
+                "y": 300
+              },
+              {
+                "x": 0,
+                "y": 120
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "4. OTT",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "40948bc6-d51a-44c1-9620-430fd9fa31b8",
+            "labels": [
+              "4. OTT"
+            ],
+            "source": {
+              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69"
+            },
+            "target": {
+              "cell": "534435ba-3519-4371-ae95-192fff24e0eb"
+            },
+            "vertices": [
+              {
+                "x": 331,
+                "y": 320
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "5. OTT",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "932711b6-2404-492f-8b46-1843fd01d18e",
+            "labels": [
+              "5. OTT"
+            ],
+            "source": {
+              "cell": "534435ba-3519-4371-ae95-192fff24e0eb"
+            },
+            "target": {
+              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Log-Bericht",
+              "description": "monatlich",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "49da7953-ebae-4887-9dcf-c71eff100572",
+            "labels": [
+              "Log-Bericht"
+            ],
+            "source": {
+              "cell": "6d51507e-6c8c-4438-b29b-81a9654a3861"
+            },
+            "target": {
+              "cell": "be4c0fb6-c03f-4ab5-a8cb-65b83eb38304"
+            },
+            "vertices": [
+              {
+                "x": 180,
+                "y": -158.5
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 480,
+              "y": -160
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Log-DB"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 11,
+            "id": "c2716661-ef88-48a8-8d0f-724e1923d562",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Log-DB",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "isALog": true,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": true,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "2049bdc0-97a2-4bf8-84a4-9d9e3bfecce7",
+                  "title": "interne Änderung von Log Dateien",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Angreifer spooft die Identität eines Mitarbeiters und greift direkt auf die Log-DB, die nicht vom SIEM überwacht wird.\n\n176\nTA0102\nD 9\nR 7\nE 10\nA 10\nD 8\n\nRelativ Wahrscheinlich \nSchweregrad ist hoch, da das Management \"So viele Daten wie möglich\" haben möchte\n\n7.3.3\nMASVS-RESILIENCE-2",
+                  "mitigation": "* Erweiterte Überwachung und Zugriffskontrolle für Log-Datenbanken:  Um das Risiko eines Angriffs, bei dem ein Angreifer die Identität eines Mitarbeiters spooft und direkt auf die Log-Datenbank zugreift, zu minimieren, sind erweiterte Überwachungsmechanismen und Zugriffskontrollen erforderlich.\nImplementierung von Logging für Zugriffe auf die Log-Datenbank, um alle Aktivitäten zu protokollieren.\nEinführung von strengen Zugriffskontrollen für die Log-Datenbank, die sicherstellen, dass nur autorisierte Benutzer mit den notwendigen Rechten auf die Daten zugreifen können.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Konfiguration von Datenbank-Logging-Mechanismen, um alle Zugriffe auf die Log-Datenbank aufzuzeichnen, einschließlich Benutzeridentität und durchgeführter Aktionen.\nIntrusion Detection- und Prevention-System (IDPS): Implementierung von IDPS, um verdächtige Aktivitäten in Echtzeit zu erkennen und darauf zu reagieren, um unautorisierte Zugriffe zu blockieren.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Durch erweiterte Überwachung und Zugriffskontrollen wird das Risiko eines erfolgreichen Angriffs auf die Log-Datenbank erheblich minimiert.\nNach Implementierung der Maßnahmen sollte eine regelmäßige Überprüfung erfolgen, um sicherzustellen, dass die Sicherheitsvorkehrungen wirksam sind und den aktuellen Bedrohungen standhalten können.\n\nD3-DQSA",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 104,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "protocol": "",
+              "isPublicNetwork": false
+            }
+          },
+          {
+            "position": {
+              "x": 360,
+              "y": 425
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Telefonnummern-DB"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 12,
+            "id": "2e16a416-e822-44a0-8501-2d54aa8add4f",
+            "data": {
+              "type": "tm.Store",
+              "name": "Telefonnummern-DB",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "e9cce373-fe4a-4223-ae54-a4f712defcac",
+                  "title": "Angreifer gibt sich als 2FA Dienst aus",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Spoofing",
+                  "description": "Angreifer im lokalen Netz betreibt ARP Spoofing und fängt alle Daten ab die an das 2FA System gehen würden.\n\n97\nTA0100\n\nD 3\nR 7\nE 5\nA 5\nD 3\n\n2.5.3\nMASVS-NETWORK-2",
+                  "mitigation": "*  Schutz vor ARP Spoofing und Sicherung des 2FA-Systems: Um das Risiko eines ARP Spoofing-Angriffs zu minimieren, bei dem ein Angreifer im lokalen Netzwerk alle Daten abfängt, die an das 2FA-System gehen würden, sind sowohl technische als auch organisatorische Maßnahmen erforderlich.\nNetzwerksicherheit.\nVerschlüsselung des Datenverkehrs.\nZwei-Faktor-Authentifizierung (2FA) Stärkung.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Implementierung von Netzwerküberwachungstools, die auf ARP Spoofing hinweisen und bei Verdacht Alarme auslösen.\nVerschlüsselung des Datenverkehrs: Implementierung von Ende-zu-Ende-Verschlüsselung für alle Kommunikationen zwischen Clients und dem 2FA-System.\nStärkung der 2FA-Mechanismen: Auswahl von robusten 2FA-Methoden, die schwer zu kompromittieren sind, selbst wenn ein Angreifer den Datenverkehr abfängt.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Durch die Implementierung von Maßnahmen gegen ARP Spoofing und die Verschlüsselung des Datenverkehrs wird das Risiko eines erfolgreichen Angriffs erheblich minimiert.\nNach Implementierung der Maßnahmen sollte eine regelmäßige Überprüfung erfolgen, um sicherzustellen, dass die Sicherheitsvorkehrungen wirksam sind und den aktuellen Bedrohungen standhalten können.\n\nD3-MAC",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 156,
+                  "score": ""
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 925,
+              "y": -230
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Routing-\nInformation-DB"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 13,
+            "id": "b1ef5a1b-e975-4fd3-8ba0-079c4b33533f",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Routing-\nInformation-DB",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "f58d895f-a270-4d59-bf1c-dc035134deb0",
+                  "title": "Angreifer ändert Informationen für die Telefonnumerauflösung",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Angreifer hat Schreibrechte auf die DB des Telefonanbieters und/oder verschlüsselt die Informationen in der DB.\n\n161\nTA0105\n\nD 9\nR 7\nE 10\nA 10\nD 6\n\nRelativ Wahrscheinlich\nMan soll auch damit rechnen, dass externe Services einen schlechteren Sicherheitsstandard haben können.\n\n5.2.5\nMASVS-AUTH-3",
+                  "mitigation": "* Datenbankzugriffskontrollen und Verschlüsselung: Um das Risiko eines Angriffs zu minimieren, bei dem ein Angreifer Schreibrechte auf die Datenbank des Telefonanbieters erlangt oder Informationen in der Datenbank verschlüsselt, sind robuste Zugriffskontrollen und Verschlüsselung erforderlich.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Festlegung von klaren Zugriffsrichtlinien für die Datenbank und sicherstellen, dass nur autorisierte Benutzer entsprechende Berechtigungen haben.\nTransparente Datenbankverschlüsselung: Implementierung von Technologien, die eine transparente Datenbankverschlüsselung ermöglichen, ohne die Anwendungslogik zu beeinträchtigen.\nHardware Security Modules (HSM): Integration von HSMs zur sicheren Aufbewahrung von Verschlüsselungsschlüsseln, um den physischen Schutz der Schlüssel zu gewährleisten.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Durch die Implementierung von Zugriffskontrollen und Datenbankverschlüsselung wird das Risiko eines erfolgreichen Angriffs auf die Datenbank erheblich minimiert.\nNach Implementierung der Maßnahmen sollte eine regelmäßige Überprüfung erfolgen, um sicherzustellen, dass die Sicherheitsvorkehrungen wirksam sind und den aktuellen Bedrohungen standhalten können.\n\nD3-DENCR",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 107,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "protocol": "",
+              "isPublicNetwork": false
+            }
+          },
+          {
+            "position": {
+              "x": 265,
+              "y": 93
+            },
+            "size": {
+              "width": 120,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Allsecure \nMobile Phone\nOTT Service"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 14,
+            "id": "534435ba-3519-4371-ae95-192fff24e0eb",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Allsecure \nMobile Phone\nOTT Service",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "c448971f-119b-4395-be08-7dacbe091930",
+                  "title": "Mitarbeiter kann sich selber als Manager eintragen",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Wenn ein Angreifer schon Rechte eines Mitarbeiters hat, kann er sich selber als Manager eintragen und kriegt dann alle sensible Daten.\n\n117\nTA0111\nD 9\nR 3\nE 10\nA 7\nD 8\n\nRelativ schwierig zu machen\nHohe Wahrscheinlichkeit, dass dieses versucht wird\n\n2.2.1\nMASVS-AUTH-3",
+                  "mitigation": "* Identitäts- und Berechtigungsmanagement mit Zwei-Faktor-Authentifizierung (2FA):  Um das Risiko einer Erhöhung von Privilegien zu minimieren, sollte ein robustes Identitäts- und Berechtigungsmanagement implementiert werden.\nDie 2FA stellt sicher, dass der Angreifer nicht nur Zugriff auf Benutzeranmeldeinformationen benötigt, sondern auch einen zweiten Authentifizierungsfaktor, um sich erfolgreich als Manager einzutragen.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Implementierung von 2FA für alle Benutzerkonten, insbesondere für privilegierte Konten wie Manager.\nÜberprüfung und Aktualisierung von Berechtigungen basierend auf dem Prinzip der geringsten Rechte.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Die Implementierung von 2FA und PoLP minimiert das Risiko einer Erhöhung von Privilegien erheblich, da sie den Zugang zu sensiblen Daten erschweren und unnötige Berechtigungen begrenzen.\nNach Implementierung der Maßnahmen sollte eine regelmäßige Überprüfung erfolgen, um sicherzustellen, dass die Sicherheitsvorkehrungen effektiv sind und den aktuellen Bedrohungen standhalten können.\n\nD3-MAC",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 154,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false
+            }
+          },
+          {
+            "position": {
+              "x": 290,
+              "y": -220
+            },
+            "size": {
+              "width": 140,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Export eines\nManagement\nReports"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 16,
+            "id": "6d51507e-6c8c-4438-b29b-81a9654a3861",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Export eines\nManagement\nReports",
+              "description": "monatlicher Management-Report",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "a5807cb5-b816-492c-9309-38d33b79a55b",
+                  "title": "Email wird abgefangen",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Email wird über ein öffentliches Server gesendet und kann damit abgefangen werden.\nKann aber nicht geändert werden, da diese signiert wurde.\n\n117\nTA0100\n\nD 8\nR 3\nE 7\nA 7\nD 2\n\nSehr viele Daten gehen ans Management  und können gelesen werden.\nEher Unwahrscheinlich (Nur wenige Angreifer können einfach Mails abfangen)\nAber Anzahl der Betroffenen hoch\n\n9.2.1\nMASVS-NETWORK-1",
+                  "mitigation": "* Transport Layer Security (TLS) für sichere E-Mail-Kommunikation: Die Implementierung von Transport Layer Security (TLS) für die E-Mail-Kommunikation stellt sicher, dass die Daten während der Übertragung zwischen Servern verschlüsselt sind. \nTLS verschlüsselt den Datenverkehr zwischen E-Mail-Servern, was die Wahrscheinlichkeit eines Abfangens und Mitlesens durch Dritte erheblich reduziert.\n\n* Digitale Signatur: Einsatz von digitalen Signaturen für E-Mails, um die Authentizität der Absenderadresse zu überprüfen. \nTLS-Implementierung: Konfiguration der E-Mail-Server, um TLS für die Verschlüsselung des Datenverkehrs zwischen Servern zu aktivieren.\nÜberwachung und Logging: Einführung von Überwachungsmechanismen und Protokollierung, um verdächtige Aktivitäten zu erkennen und darauf reagieren zu können.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Die Implementierung von TLS und digitalen Signaturen reduziert erheblich das Risiko des Abfangens von E-Mails und schützt vor möglichen Manipulationen während der Übertragung.\n Nach der Umsetzung der Maßnahmen sollte eine regelmäßige Überprüfung erfolgen, um sicherzustellen, dass die Sicherheitsvorkehrungen wirksam sind und den aktuellen Bedrohungen standhalten können.\n\nD3-CTS",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 114,
+                  "score": ""
+                },
+                {
+                  "id": "337c318c-37ce-4b3b-80bb-4adb931668a9",
+                  "title": "Mitarbeiter kann sich als Manager eintragen",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Wenn ein Angreifer schon Rechte von einem Mitarbeiter hat, kann er sich selber als Manager eintragen und kriegt dann alle sensible Daten.\n\n151\nTA0111\nD 8\nR 3\nE 10\nA 8\nD 6\n\n2.2.1\nMASVS-AUTH-3",
+                  "mitigation": "* Prinzip der geringsten Rechte (Principle of Least Privilege, PoLP): Das Prinzip der geringsten Rechte (PoLP) beinhaltet die Vergabe von minimal notwendigen Zugriffsrechten für Benutzer, um ihre Aufgaben zu erfüllen.\nDie Anwendung des Prinzips der geringsten Rechte reduziert die Angriffsfläche, indem nur die notwendigen Berechtigungen für die jeweiligen Aufgaben vergeben werden.\n\n* Konsequente Anwendung von PoLP bei der Zuweisung von Berechtigungen für Benutzer und Systeme. \nRegelmäßige Überprüfungen der Benutzerberechtigungen sowie Sicherheitsaudits, um sicherzustellen, dass die Rechte angemessen vergeben und keine unnötigen Privilegien vorhanden sind.\nImplementierung von Tools und Systemen zur Überwachung von Benutzeraktivitäten.\n\n* Die Anwendung des Prinzips der geringsten Rechte und die kontinuierliche Überwachung von Benutzeraktivitäten tragen dazu bei, das Risiko einer Privilegieneskalation erheblich zu reduzieren.\n\nD3-MAC",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 153,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false
+            }
+          },
+          {
+            "position": {
+              "x": -28,
+              "y": -194
+            },
+            "size": {
+              "width": 140,
+              "height": 70
+            },
+            "attrs": {
+              "text": {
+                "text": "Management"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 17,
+            "id": "be4c0fb6-c03f-4ab5-a8cb-65b83eb38304",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Management",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "providesAuthentication": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "7002ef0f-bef5-4ed0-af8e-a8876d6ae1a6",
+                  "title": "Daten von Server wird getraut",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Repudiation",
+                  "description": "Angreifer könnten eigene Daten einspielen.\nDamit kann man andere Angriffe auf andere Leute schieben mit gefälschten Informationen.\n\n148\nTA0101\n\nD 3\nR 4\nE 7\nA 7\nD 1\n\nSchaden ist relativ niedrig, da dies weitere Spuren hinterlassen könnte\nWahrscheinlichkeit auch niedrig, da andere Angriffe vorausgehen müssen und SIEM Systeme nicht öffentlich sind.\n\n5.1.1\nMASVS-AUTH-3",
+                  "mitigation": "* Digitale Signaturimplementierung:  Die Implementierung einer digitalen Signatur ermöglicht es, die Authentizität und Integrität von Daten zu gewährleisten. Digitale Signaturen bieten eine zuverlässige Methode zur Identifizierung und Überprüfung von Absendern.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Implementierung eines sicheren Systems zur Generierung, Speicherung und Verwaltung von digitalen Schlüsseln, um die Integrität der Signaturen zu gewährleisten. Verschlüsselung. Protokollierung und Überwachung.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Die Einführung von digitalen Signaturen reduziert das Risiko der Repudiation erheblich, da die Authentizität der Daten überprüft werden kann. Nach Implementierung der Maßnahme sollte eine regelmäßige Überprüfung erfolgen, um sicherzustellen, dass die Sicherheitsmaßnahmen immer noch wirksam sind und den sich ändernden Bedrohungen standhalten können.\n\nD3-SRA\n",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 149,
+                  "score": ""
+                },
+                {
+                  "id": "ec1f7fa4-c5ad-4e68-9dec-def3416ffc5b",
+                  "title": "Angreifer gibt sich als SIEM aus",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Spoofing",
+                  "description": "Angreifer im lokalen Netz betreibt ARP Spoofing und fängt alle Daten ab die an das SIEM System gehen würden.\n\n151\nTA0101\nD 3\nR 2\nE 7\nA 6\nD 4\n\n2.5.3\nMASVS-NETWORK-2",
+                  "mitigation": "* Netzwerksegmentierung und Überwachung: Netzwerksegmentierung ist eine Maßnahme, bei der das Netzwerk in isolierte Segmente unterteilt wird. In diesem Fall könnte man das Netzwerk so strukturieren, dass das SIEM-System in einem eigenen Segment platziert ist. Durch die Segmentierung des Netzwerks wird die Angriffsfläche für ARP Spoofing reduziert, da ein Angreifer, der sich im lokalen Netz befindet, Schwierigkeiten hat, auf das Segment des SIEM-Systems zuzugreifen.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Implementierung von Firewalls und Netzwerkrichtlinien, um das Netzwerk in Segmente zu unterteilen.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Die Netzwerksegmentierung und Überwachung tragen dazu bei, das Risiko von Spoofing-Angriffen zu minimieren, indem der Angriffsvektor begrenzt wird und Anomalien frühzeitig erkannt werden.\nNach Implementierung der Maßnahmen sollte eine regelmäßige Überprüfung erfolgen, um sicherzustellen, dass die Sicherheitsvorkehrungen effektiv sind und den aktuellen Bedrohungen standhalten können.\n\nD3-PCSV",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 152,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false
+            }
+          },
+          {
+            "position": {
+              "x": 400,
+              "y": 130
+            },
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "SIEM-System"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 20,
+            "id": "3f628a4e-a617-4e98-997c-07ab6a4df77f",
+            "data": {
+              "type": "tm.Flow",
+              "name": "SIEM-System",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "392110b5-6aec-424a-a48e-4c0b2bc6ce14",
+                  "title": "Angreifer gibt sich im lokalen Netz als 2FA dienst aus",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Denial of service",
+                  "description": "Angreifer gibt sich im Lokalem Netzwerk über VPN als 2FA aus und sendet viele Daten an das SIEM welches intern nichts Wesentliches tun kann, außer die Anwesenheit eines Angriffs anzukündigen.\n\n607\nTA0109\nD 3\nR 2\nE 6\nA 4\nD 1\n\nNicht schwer, aber SIEM weiss trotzdem, dass es einen Angriff gibt. \nWahrscheinlichkeit - mittel, da das Netz innerlich nicht gesichert ist.\n\n2.5.3\nMASVS-NETWORK-2",
+                  "mitigation": "* Erhöhte Sicherheit für VPN-Zugriff und Verbesserung des SIEM-Systems: Um die beschriebene Bedrohung zu minimieren, sind verstärkte Sicherheitsmaßnahmen für den VPN-Zugriff erforderlich, insbesondere in Bezug auf die Authentifizierung und Überwachung.\nVerbesserte VPN-Sicherheit: Durch eine stärkere Authentifizierung für den VPN-Zugriff wird es für einen Angreifer schwieriger, sich als legitimer Benutzer auszugeben.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Implementierung von MFA für den VPN-Zugriff, um sicherzustellen, dass der Angreifer nicht nur Benutzeranmeldeinformationen, sondern auch einen zweiten Authentifizierungsfaktor benötigt.\nRegelmäßige Überprüfungen von VPN-Logs.\nErweiterte Analysefähigkeiten im SIEM.\nAutomatisierte Reaktionen im SIEM.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Die verbesserte VPN-Sicherheit durch MFA und regelmäßige Überprüfungen, kombiniert mit einem leistungsfähigen SIEM-System, reduziert das Risiko eines erfolgreichen Angriffs erheblich.\n\nD3-MAC",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 117,
+                  "score": ""
+                },
+                {
+                  "id": "2bd37c88-ba2d-465e-90e5-4bed779d1a67",
+                  "title": "keine Überprüfung von Serverdaten ",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Repudiation",
+                  "description": "Angreifern wird erlaubt, eigene Daten einzuspielen.\nDamit lassen sich Angriffe auf andere Leute schieben.\n\n173\nTA0104\n\nD 2\nR 2\nE 5\nA 4\nD 1\n\nSchaden ist relativ niedrig, da dies weitere Spuren hinterlassen könnte\nWahrscheinlichkeit auch niedrig, da andere Angriffe vorausgehen müssen und SIEM Systeme nicht öffentlich sind.\n\n14.5.1\nMASVS-AUTH-3",
+                  "mitigation": "* Logging und digitale Signaturen zur Überprüfung der Datenintegrität: Um das Risiko der Repudiation zu minimieren, bei dem Angreifer versuchen könnten, gefälschte Daten einzuspielen und Angriffe auf andere Personen zu schieben, ist es wichtig, umfassendes Logging und digitale Signaturen zu implementieren.\nLogging: Protokollierung aller Transaktionen und Aktionen, um eine lückenlose Aufzeichnung von Aktivitäten zu gewährleisten.\nDigitale Signaturen: Anwendung digitaler Signaturen auf kritische Daten und Transaktionen.\n\n* Technische/organisatorische Umsetzung der Maßnahme: Implementierung von robusten Logging-Mechanismen, die relevante Informationen über Transaktionen, Benutzeraktionen und Systemaktivitäten erfassen.\nDigitale Signaturen: Einführung von digitalen Signaturen für kritische Daten und Transaktionen.\n\n* Bewertung der Risikoreduktion und Wiederbewertung des Risikos: Die Implementierung von Logging und digitalen Signaturen minimiert das Risiko der Repudiation, indem sie eine nachvollziehbare Aufzeichnung von Aktivitäten schafft und die Integrität von Daten gewährleistet.\n\nD3-FIM",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 155,
+                  "score": ""
+                }
+              ],
+              "isBidirectional": false,
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false
+            }
+          }
+        ],
+        "version": "2.1.1",
+        "title": "Architekturdiagramm",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0,
+        "diagramType": "Generic",
+        "placeholder": "New generic diagram description"
+      }
+    ],
+    "reviewer": "Dimov & Tadjiev & Sascha Hack",
+    "diagramTop": 10,
+    "threatTop": 156
+  },
+  "version": "2.1.1"
+}
