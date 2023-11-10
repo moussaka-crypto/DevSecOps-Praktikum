@@ -1813,14 +1813,15 @@
         ],
         "version": "2.1.1",
         "title": "Architekturdiagramm",
-        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
         "id": 0,
-        "diagramType": "STRIDE"
+        "diagramType": "Generic",
+        "placeholder": "New generic diagram description"
       }
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 10,
-    "threatTop": 125
+    "threatTop": 148
   },
   "version": "2.1.1"
 }
