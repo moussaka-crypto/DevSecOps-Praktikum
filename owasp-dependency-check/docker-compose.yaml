@@ -1,0 +1,10 @@
+version: "3"
+services:
+  owasp:
+    image: owasp/dependency-check:latest
+    container_name: owasp-dependency-check
+    volumes:
+      - ./app:/app
+      - ./data:/usr/share/dependency-check/data
+      - ./report:/report
+    command: --scan /app --format HTML --project MeinProjekt --out /report
