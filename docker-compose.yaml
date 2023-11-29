@@ -10,7 +10,6 @@ services:
     expose:
       - "8080"
 
-
   reverseproxy:
     image: nginx:latest
     container_name: reverseproxy
