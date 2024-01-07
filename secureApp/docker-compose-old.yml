@@ -1,0 +1,20 @@
+version: '2'
+services:
+ web:
+   image: phpmyadmin:latest
+   privileged: true
+   ports:
+    - "8080:80"
+   depends_on:
+    - mysql
+   environment:
+    - PMA_HOST=mysql
+    - PMA_USER=test
+    - PMA_PASSWORD=test
+ mysql:
+   image: mysql:5.5
+   environment: 
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=test
+    - MYSQL_USER=test
+    - MYSQL_PASSWORD=test
