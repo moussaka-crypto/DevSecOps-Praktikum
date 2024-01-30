@@ -1,0 +1,24 @@
+# Exclude version control files
+.git
+.gitignore
+.gitattributes
+# Exclude Python-related files
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+# Exclude development and test files
+*.bak
+*.swp
+.DS_Store
+# Exclude sensitive or unnecessary files
+secrets/
+config.ini
+credentials.json
+# Exclude build artifacts and caches
+*.log
+*.db
+*.sqlite
+# Exclude Docker-related files
+.dockerignore
+Dockerfile
