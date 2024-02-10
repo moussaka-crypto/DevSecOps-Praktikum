@@ -7,3 +7,7 @@
 * XSS Hacking Challenge
 * Exploring Docker Security, Docker Escape and Isolation Concepts with Local File Inclusion (LFI) through a [phpMyAdmin 4.8.1 exploit](https://www.exploit-db.com/exploits/50457)
 
+### Now, shall we get cooking?...
+<img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/7/76/Yuji_and_Aoi_Todo_get_to_cooking_%28Anime%29.png/revision/latest/scale-to-width-down/1000?cb=20210220180408"
+     alt="cooking"
+  width= 50%/>
