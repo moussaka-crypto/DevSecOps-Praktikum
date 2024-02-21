@@ -1,4 +1,14 @@
 # DevSecOps assignments
+![Docker](https://custom-icon-badges.demolab.com/badge/Docker-0db7ed.svg?logo=docker&logoColor=white) 
+![PHP](https://img.shields.io/badge/PHP-747bb3.svg?logo=php&logoColor=white) 
+![Python](https://img.shields.io/badge/Python-14354C.svg?logo=python&logoColor=white) 
+![Bash](https://img.shields.io/badge/Bash-121011.svg?logo=gnu-bash&logoColor=white) 
+![Vim](https://custom-icon-badges.demolab.com/badge/Vim-049b33.svg?logo=vim&logoColor=white) 
+![GitHub](https://custom-icon-badges.demolab.com/badge/GitHub-6a2486.svg?logo=github&logoColor=white) 
+![NGINX](https://custom-icon-badges.demolab.com/badge/NGINX-009900.svg?logo=nginx&logoColor=white) 
+![ThreatDragon](https://custom-icon-badges.demolab.com/badge/ThreatDragon-ebebeb.svg?logo=threatdragon&logoColor=black) 
+![OWASP](https://custom-icon-badges.demolab.com/badge/OWASP-253e81.svg?logo=owasp&logoColor=white) 
+![Sonarcloud](https://custom-icon-badges.demolab.com/badge/Sonarcloud-f48952.svg?logo=sonarcloud&logoColor=white)
 
 * Linux and Docker (Compose) Basics
 * Nginx Reverse Proxy for [secure connection](https://tadim-team22.devsecops.fh-aachen.de) of Docker containers via https to public networks
